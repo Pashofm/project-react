@@ -3,6 +3,25 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
+function createTable( nombre, apellido, edad ) {
+  return { nombre, apellido, edad };
+}
+
+const rows = [
+  createTable('Francisco Miguel', 'Soberanes Franco', 21),
+  createTable('Jesus Daniel', 'Jimenez Guerrero', 21),
+  createTable('Zarek de jesus', 'Rodriguez Gonzales', 22),
+  createTable('Angel Santiago', 'Salazar segura', 22),
+  createTable('Carlos eduardo', 'Osuna Osuna', 21),
+];
 
 function App() {
   const [count, setCount] = useState(0)
@@ -52,7 +71,31 @@ function App() {
           Valor contador {count}
         </button>
 
-
+        <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+        <TableRow>
+        <TableCell>Nombre</TableCell>
+        <TableCell align="right">Apellido;(g)</TableCell>
+        <TableCell align="right">Edad;(g)</TableCell>
+        </TableRow>
+        </TableHead>
+        <TableBody>
+        {rows.map((row) => (
+          <TableRow
+          key={row.name}
+          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+          >
+          <TableCell component="th" scope="row">
+          {row.nombre}
+          </TableCell>
+          <TableCell align="right">{row.apellido}</TableCell>
+          <TableCell align="right">{row.edad}</TableCell>
+          </TableRow>
+        ))}
+        </TableBody>
+        </Table>
+        </TableContainer>
       </section>
 
       <div className="ticks"></div>
