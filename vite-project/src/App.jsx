@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -6,6 +6,18 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  /* Asignar valor maximo y minimo al contador */
+  useEffect(() => {
+    if( count > 10 ){
+      alert('Contador valor maximo');
+      setCount((count) => count = 10);
+    } 
+    if ( count < 0 ) {
+      alert('Contador valor minumo');
+      setCount((count) => count = 0);
+    }
+  }, [count])
 
   return (
     <>
@@ -25,8 +37,22 @@ function App() {
           className="counter"
           onClick={() => setCount((count) => count + 1)}
         >
-          Count is {count}
+          Aumentar valor
         </button>
+        <button
+          className="counter"
+          onClick={() => setCount((count) => count - 1)}
+        >
+          Disminuir valor
+        </button>
+
+        <button
+          className="counter"
+        >
+          Valor contador {count}
+        </button>
+
+
       </section>
 
       <div className="ticks"></div>
