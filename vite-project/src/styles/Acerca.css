@@ -1,0 +1,37 @@
+.page {
+  background-color: #0f0f0f;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.card {
+  background-color: #1a1a1a;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.label {
+  color: #9ca3af;
+}
+
+.image {
+  max-width: 300px;
+  border-radius: 12px;
+}

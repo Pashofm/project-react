@@ -1,91 +1,57 @@
-import * as React from 'react';
-import ListSubheader from '@mui/material/ListSubheader';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
+import '../styles/Acerca.css';
+import NestedList from '../components/NestedList';
 
+function Acerca() {
+  return (
+    <div className="page">
+      <div className="container">
+        <h1 className="title">
+          Acerca de mí
+        </h1>
 
-const Acerca = () => {
+        <div className="card">
+          <p>
+            <span className="label">
+              Nombre:
+            </span> Francisco Miguel Soberanes Franco
+          </p>
+        </div>
 
-  export default const NestedList = () => {
-    const [open, setOpen] = React.useState(true);
+        <div className="card">
+          <p>
+            <span className="label">
+              Carrera:
+            </span> Licenciatura en informatica
+          </p>
+        </div>
 
-    const handleClick = () => {
-      setOpen(!open);
-    };
+        <div className="card">
+          <p>
+            <span className="label">
+              Descripción <br /><br />
+            </span>   
+            Hola amigo mio <br />
+            Hola amigo mio <br />
+            Hola amigo mio <br />
+            Hola amigo mio <br />
+            Hola amigo mio
+          </p>
+        </div>
 
-    return (
+        <div className="container">
+          <NestedList />
+        </div>
 
-      <div>
-      <h1>Acerca de mí</h1>
+        <div className="container">
+          <img className="image" 
+            src="https://images.unsplash.com/photo-1709429862860-630eb66fcf5e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGF0byUyMGJsYW5jb3xlbnwwfHwwfHx8MA%3D%3D" 
+            alt="Foto de perfil"
+          />
+        </div>
 
-      <p><strong>Nombre:</strong> Francisco Miguel Soberanes Franco</p>
-      <p><strong>Carrera:</strong> Licenciatura en informatica</p>
-
-      <p>
-      Soy estudiante y de licenciatura en informatica el cual
-      Soy estudiante y de licenciatura en informatica el cual
-      Soy estudiante y de licenciatura en informatica el cual
-      Soy estudiante y de licenciatura en informatica el cual
-      Soy estudiante y de licenciatura en informatica el cual
-      </p>
-
-      <List
-      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-      subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
-        Habilidades
-        </ListSubheader>
-      }
-      >
-      <ListItemButton>
-      <ListItemIcon>
-      <SendIcon />
-      </ListItemIcon>
-      <ListItemText primary="Sent mail" />
-      </ListItemButton>
-      <ListItemButton>
-      <ListItemIcon>
-      <DraftsIcon />
-      </ListItemIcon>
-      <ListItemText primary="Drafts" />
-      </ListItemButton>
-      <ListItemButton onClick={handleClick}>
-      <ListItemIcon>
-      <InboxIcon />
-      </ListItemIcon>
-      <ListItemText primary="Inbox" />
-      {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-      <List component="div" disablePadding>
-      <ListItemButton sx={{ pl: 4 }}>
-      <ListItemIcon>
-      <StarBorder />
-      </ListItemIcon>
-      <ListItemText primary="Starred" />
-      </ListItemButton>
-      </List>
-      </Collapse>
-      </List>
-
-      <img
-      src="https://via.placeholder.com/150"
-      alt="Foto de perfil"
-      />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
-  export default Acerca;
+export default Acerca;
