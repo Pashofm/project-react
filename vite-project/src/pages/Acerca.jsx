@@ -29,12 +29,8 @@ function Acerca() {
           <p>
             <span className="label">
               Descripción <br /><br />
-            </span>   
-            Hola amigo mio <br />
-            Hola amigo mio <br />
-            Hola amigo mio <br />
-            Hola amigo mio <br />
-            Hola amigo mio
+            </span> 
+            Soy estudiando interesado en el aprendizaje de linux, el desarrollo web y desarrollo en inteligencia artificial. Me gustan muchos las computadoras y entender todo lo relacionado a ellas, junto con la programación, que busco aprender las tecnologías nuevas. Además de esto me gustan los videojuegos y realizar ejercicio o deporte en mi día a dia, además que me gusta aprender idiomas y leer algún que otro libro.
           </p>
         </div>
 
